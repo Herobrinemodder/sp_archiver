@@ -59,7 +59,7 @@ def getComments(user_dir):
         commenturls.append((form_data,seedid,user_dir))
     print("DOWNLOADING COMMENTS")
     print("STARTING AT "+str(datetime.datetime.now()))
-    with ThreadPoolExecutor(max_workers=20) as pool:
+    with ThreadPoolExecutor(max_workers=10) as pool:
         response_list = list(pool.map(get_comments,commenturls))
         
 
